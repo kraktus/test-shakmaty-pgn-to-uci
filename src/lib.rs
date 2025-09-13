@@ -3,6 +3,21 @@ use std::fmt::Write;
 use arrayvec::{ArrayString, ArrayVec};
 use shakmaty::{CastlingMode, Chess, Position, san::San};
 
+use pyo3::prelude::*;
+
+#[pyfunction]
+fn str_to_uci2(pgn: &str) -> PyResult<String> {
+    Ok(str_to_uci(pgn).to_string())
+}
+
+/// A Python module implemented in Rust. The name of this function must match
+/// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
+/// import the module.
+#[pymodule]
+fn test_shakmaty_pgn_to_uci(module: &Bound<'_, PyModule>) -> PyResult<()> {
+    module.add_function(wrap_pyfunction!(str_to_uci2, module)?)
+}
+
 type SanList = ArrayVec<San, 512>;
 
 // TODO check if max size is enough

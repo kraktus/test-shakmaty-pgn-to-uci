@@ -9,7 +9,7 @@
 On M1 MacBook Air, 16GB RAM:
 
 ```
- Running benches/my_benchmark.rs (~/.cargo/target/release/deps/my_benchmark-c458262784c1d66d)
+ Running benches/my_benchmark.rs (/.cargo/target/release/deps/my_benchmark-c458262784c1d66d)
 Gnuplot not found, using plotters backend
 go                      time:   [6.3047 µs 6.3531 µs 6.4229 µs]
                         change: [+0.4095% +1.9866% +4.2506%] (p = 0.03 < 0.05)
