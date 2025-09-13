@@ -1,10 +1,15 @@
 use pyo3::prelude::*;
 
-use test_shakmaty_pgn_to_uci::str_to_uci;
+use test_shakmaty_pgn_to_uci::{str_to_uci, str_to_uci_visitor};
 
 #[pyfunction]
 fn str_to_uci2(pgn: &str) -> PyResult<String> {
     Ok(str_to_uci(pgn).to_string())
+}
+
+#[pyfunction]
+fn str_to_uci2_visitor(pgn: &str) -> PyResult<String> {
+    Ok(str_to_uci_visitor(pgn).to_string())
 }
 
 /// A Python module implemented in Rust. The name of this function must match
@@ -12,5 +17,6 @@ fn str_to_uci2(pgn: &str) -> PyResult<String> {
 /// import the module.
 #[pymodule]
 fn san_to_uci(module: &Bound<'_, PyModule>) -> PyResult<()> {
-    module.add_function(wrap_pyfunction!(str_to_uci2, module)?)
+    module.add_function(wrap_pyfunction!(str_to_uci2, module)?)?;
+    module.add_function(wrap_pyfunction!(str_to_uci2_visitor, module)?)
 }

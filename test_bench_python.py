@@ -31,6 +31,11 @@ def test_pyo3(benchmark):
     result = benchmark(san_to_uci.str_to_uci2, EXAMPLE_PGN)
     assert result == EXPECTED_OUTPUT
 
+def test_pyo3_visitor(benchmark):
+    import san_to_uci
+    result = benchmark(san_to_uci.str_to_uci2_visitor, EXAMPLE_PGN)
+    assert result == EXPECTED_OUTPUT
+
 def main():
     print(str_to_uci(EXAMPLE_PGN))
 
