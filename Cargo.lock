@@ -265,6 +265,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d6790f58c7ff633d8771f42965289203411a5e5c68388703c06e14f24770b41e"
 
 [[package]]
+name = "pgn-reader"
+version = "0.28.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d0e07db84c19e093741643903738788e6f773237c7eeb60f9a40191afc2a815a"
+dependencies = [
+ "btoi",
+ "memchr",
+ "shakmaty",
+]
+
+[[package]]
 name = "plotters"
 version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -442,6 +453,7 @@ version = "0.1.0"
 dependencies = [
  "arrayvec",
  "criterion",
+ "pgn-reader",
  "shakmaty",
 ]
 

@@ -9,16 +9,16 @@ python `pytest`
 
 On M1 MacBook Air, 16GB RAM:
 
-rust
+rust, (two versions, one using a real PGN parser, the other a minimal adhoc one)
 ```
- Running benches/my_benchmark.rs (/.cargo/target/release/deps/my_benchmark-c458262784c1d66d)
-Gnuplot not found, using plotters backend
-go                      time:   [6.3047 µs 6.3531 µs 6.4229 µs]
-                        change: [+0.4095% +1.9866% +4.2506%] (p = 0.03 < 0.05)
-                        Change within noise threshold.
-Found 13 outliers among 100 measurements (13.00%)
-  5 (5.00%) high mild
-  8 (8.00%) high seve
+adhoc parser            time:   [6.4630 µs 6.4691 µs 6.4762 µs]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+
+pgn_reader parser       time:   [7.7191 µs 7.7251 µs 7.7309 µs]
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high severe
 ```
 
 python

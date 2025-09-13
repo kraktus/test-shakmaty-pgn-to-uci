@@ -5,6 +5,7 @@ edition = "2024"
 
 [dependencies]
 arrayvec = "0.7.6"
+pgn-reader = "0.28.0"
 shakmaty = "0.29.1"
 
 
