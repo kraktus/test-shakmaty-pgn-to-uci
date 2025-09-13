@@ -1,0 +1,13 @@
+[package]
+name = "san_to_uci"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "san_to_uci"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.26.0", features = ["extension-module"] }
+test_shakmaty_pgn_to_uci = { path = ".." }

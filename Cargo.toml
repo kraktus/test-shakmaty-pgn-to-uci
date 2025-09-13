@@ -1,21 +1,11 @@
 [package]
-name = "test-shakmaty-pgn-to-uci"
+name = "test_shakmaty_pgn_to_uci"
 version = "0.1.0"
 edition = "2024"
-
-[lib]
-name = "test_shakmaty_pgn_to_uci"
-# "cdylib" is necessary to produce a shared library for Python to import from.
-#
-# Downstream Rust code (including code in `bin/`, `examples/`, and `tests/`) will not be able
-# to `use string_sum;` unless the "rlib" or "lib" crate type is also included, e.g.:
-# crate-type = ["cdylib", "rlib"]
-crate-type = ["cdylib", "lib"]
 
 [dependencies]
 arrayvec = "0.7.6"
 shakmaty = "0.29.1"
-pyo3 = { version = "0.26", features = ["extension-module"] }
 
 
 [dev-dependencies]
